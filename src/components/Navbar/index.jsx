@@ -4,22 +4,22 @@ import Link from "next/link";
 import {links, socialLinks} from "@/components/Navbar/constants";
 import {useState} from "react";
 import Image from "next/image";
+import NavLink from "@/components/NavLink";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
-
+    <div className="h-full flex items-center justify-between px-4 sm:px-8 md:px-10 lg:px-14 xl:px-36 text-xl">
       {/*Desktop MenuList*/}
       <div className='hidden md:flex gap-4 w-1/3 whitespace-nowrap'>
         {links.map(({url, title}) => (
-          <Link key={title} href={url}>{title}</Link>
+          <NavLink url={url} title={title} key={title}  />
         ))}
       </div>
 
       {/*Logo*/}
-      <div className='md:hidden lg:flex w-1/3 justify-center'>
+      <div className='lg:hidden xl:flex w-1/3 justify-center min-w-min'>
         <Link href='/' className='text-sm bg-black rounded-md p-1 font-semibold flex items-center justify-center'>
           <span className='text-white mr-1'>Kiryusha</span>
           <span className='w-12 h-8 rounded bg-white text-black flex items-center justify-center'>.dev</span>
@@ -29,7 +29,7 @@ const Navbar = () => {
       {/*SocialLinks*/}
       <div className='hidden md:flex gap-4 w-1/3 justify-center'>
         {socialLinks.map(({href, src, width, height, alt}) => (
-          <Link href={href}>
+          <Link key={alt} href={href} target="_blank">
             <Image src={src} alt={alt} width={width} height={height}/>
           </Link>
         ))}
