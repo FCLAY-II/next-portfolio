@@ -11,11 +11,11 @@ const Homepage = () => {
       <div className="h-1/2 lg:h-full lg:w-1/2 flex flex-col gap-8 items-center justify-center">
         {/* TITLE */}
         <h1 className="text-4xl md:text-6xl font-bold">
-          Всем нашинским салам!
+          Оля самая нереальная нереалка!!!
         </h1>
         {/* DESC */}
         <p className="md:text-xl">
-          Здесь надо написать много текст про себя
+          Здесь надо написать много текста про себя
         </p>
         {/* BUTTONS */}
         <div className="w-full flex gap-4">
